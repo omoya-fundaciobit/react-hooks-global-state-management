@@ -1,0 +1,21 @@
+.contacts-list {
+  text-align: left;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.contact-item {
+  text-decoration: none;
+}
+
+.contact-secondary-data {
+  visibility: hidden;
+}
+.contact-header {
+  font-weight: bolder;
+}
