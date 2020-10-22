@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import ContactsList from "./componentes/ContactsList";
+import ContactsContainer from "./componentes/ContactsContainer";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           Learn React
         </a>
       </header> */}
-      <ContactsList></ContactsList>
+      <ContactsContainer></ContactsContainer>
     </div>
   );
 }
