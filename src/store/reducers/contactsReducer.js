@@ -1,14 +1,4 @@
-let initialState = [
-  {
-    id: 0,
-    name: "Oscar",
-    surnames: "Moya Mesa",
-    phone: "971555554",
-    email: "mail@mail.com",
-    company: "Fundacio Bit",
-    sector: "Tecnológico",
-  },
-];
+let initialState = [];
 
 const contactsReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -25,6 +15,9 @@ const contactsReducer = (state = initialState, action) => {
           sector: action.payload.sector,
         },
       ];
+
+    case "DELETE_CONTACT":
+      return initialState.filter((contact) => contact.id !== action.payload.id);
     default:
       return state;
   }

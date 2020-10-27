@@ -1,0 +1,25 @@
+.contacts-list {
+  text-align: left;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  /* padding-left: 20px; */
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  text-decoration: none;
+  border: solid;
+  border-color: black;
+  border-width: 2px;
+  width: 40%;
+}
+
+/* .contact-secondary-data {
+  visibility: hidden;
+} */
+.contact-header {
+  font-weight: bolder;
+}

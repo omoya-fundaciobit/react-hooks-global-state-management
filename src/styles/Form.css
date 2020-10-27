@@ -1,0 +1,48 @@
+form {
+  /* margin: 0 auto; */
+  width: 100%;
+  height: 100%;
+}
+
+label {
+  margin-left: 0.5em;
+  margin-bottom: 5px;
+  text-align: left;
+  display: block;
+}
+
+select,
+input {
+  margin-left: 0.5em;
+  margin-bottom: 10px;
+  width: 40%;
+  display: block;
+}
+
+input.error {
+  color: tomato;
+  font-weight: bolder;
+  border: 2px solid tomato;
+}
+
+.input-error {
+  color: tomato;
+  font-size: smaller;
+}
+
+.buttons-container {
+  width: 40%;
+  margin: 0.5em;
+  display: block;
+  text-align: right;
+}
+
+button {
+  margin-left: 0.4em;
+  background-color: black;
+  color: white;
+  font-weight: bolder;
+  font-size: small;
+  padding: 0.5em;
+  cursor: pointer;
+}

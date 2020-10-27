@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import ContactsContainer from "./componentes/ContactsContainer";
+import ContactFormContainer from "./componentes/ContactFormContainer";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           Learn React
         </a>
       </header> */}
+      <ContactFormContainer></ContactFormContainer>
       <ContactsContainer></ContactsContainer>
     </div>
   );
