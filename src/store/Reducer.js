@@ -7,25 +7,30 @@ const Reducer = (state, action) => {
       };
 
     case "ADD_CONTACT":
-      console.log("Adding");
+      let newContact = action.payload;
+      let existingIds = state.contacts.map((contact) => {
+        return contact.id;
+      });
+      let newId = Math.max(...existingIds) + 1;
+      newContact.id = newId;
       return {
         ...state,
-        contacts: state.contacts.concat(action.newContact),
+        contacts: state.contacts.concat(newContact),
       };
 
     case "REMOVE_CONTACT":
       return {
         ...state,
-        posts: state.contacts.filter(
+        contacts: state.contacts.filter(
           (contact) => contact.id !== action.payload
         ),
       };
 
-    case "SET_ERROR":
-      return {
-        ...state,
-        error: action.payload,
-      };
+    // case "SET_ERROR":
+    //   return {
+    //     ...state,
+    //     error: action.payload,
+    //   };
 
     default:
       return state;

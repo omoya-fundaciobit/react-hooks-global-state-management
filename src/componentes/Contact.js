@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-// import "../../src/styles/ContactContainer.css";
+import React, { useState, useContext } from "react";
+import { Context } from "../store/Store";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const Contact = (props) => {
   const [fullData, setFullData] = useState(false);
+  const [state, dispatch] = useContext(Context);
 
   const setBackgroundColor = (sector) => {
     if (sector === "Tecnología") {
@@ -46,7 +47,15 @@ const Contact = (props) => {
             <div>
               <p>
                 {`NOMBRE: ${props.name} ${props.surnames}`}
-                <FontAwesomeIcon style={{ float: "right" }} icon={faTrash} />
+                <FontAwesomeIcon
+                  style={{ float: "right" }}
+                  onClick={() => {
+                    console.log("deleting", props.id);
+                    let payload = props.id;
+                    dispatch({ type: "REMOVE_CONTACT", payload });
+                  }}
+                  icon={faTrash}
+                />
               </p>
               <p>{`TELÉFONO: ${props.phone}`}</p>
               <p>{`EMAIL: ${props.email}`}</p>

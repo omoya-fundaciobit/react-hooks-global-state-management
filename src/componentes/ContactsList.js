@@ -35,7 +35,6 @@ const ContactsList = ({ props }) => {
     );
   };
 
-  console.log("STATE", state);
   let filteredContacts = state.contacts
     ? state.contacts.filter(inputValueisSubstringOfContact)
     : [];
@@ -61,6 +60,7 @@ const ContactsList = ({ props }) => {
         {filteredContacts.map((contact) => (
           <Contact
             key={contact.id}
+            id={contact.id}
             name={contact.name}
             surnames={contact.surnames}
             phone={contact.phone}

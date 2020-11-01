@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import "../styles/Form.css";
+import { Context } from "../store/Store";
 
 const ContactForm = ({ submit }) => {
-  // Crear una referencia - asociado al input del formulario
-  // const valuesContact = React.createRef();
+  const [state, dispatch] = useContext(Context);
 
   return (
     <div className="form-wrapper">
@@ -23,15 +23,16 @@ const ContactForm = ({ submit }) => {
         //******* DECLARAMOS LA FUNCIÓN QUE SE DEBE EJECUTAR EN EL ONSUBMIT DEL FORMULARIO ***** */
         onSubmit={(values) => {
           // event.preventDefault(); // evitamos que se recargue la página
-          console.log(values);
-          submit(
-            values.name,
-            values.surnames,
-            values.phone,
-            values.email,
-            values.company,
-            values.sector
-          ); // ejecutamos la función de TodoFormContainer
+          let payload = values;
+          dispatch({ type: "ADD_CONTACT", payload });
+          // submit(
+          //   values.name,
+          //   values.surnames,
+          //   values.phone,
+          //   values.email,
+          //   values.company,
+          //   values.sector
+          // ); // ejecutamos la función de TodoFormContainer
         }}
         // ****** VALIDACIÓN DE CAMPOS A TRAVÉS DE YUP ********
         // Creamos un esquema del aspecto que tendrá el objeto formulario y sus campos

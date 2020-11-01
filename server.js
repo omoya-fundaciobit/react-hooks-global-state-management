@@ -10,15 +10,6 @@ router.use(bodyParser.json()); // to support JSON-encoded bodies
 const contacts = [
   {
     id: 0,
-    name: "Óscar",
-    surnames: "Moya Mesa",
-    phone: "971282882",
-    email: "omoya@fundaciobit.org",
-    company: "FBIT",
-    sector: "Tecnología",
-  },
-  {
-    id: 1,
     name: "Manolo",
     surnames: "López López",
     phone: "971282881",
@@ -27,7 +18,7 @@ const contacts = [
     sector: "Agricultura",
   },
   {
-    id: 2,
+    id: 1,
     name: "Luis",
     surnames: "Giménez Ruíz",
     phone: "971282481",
