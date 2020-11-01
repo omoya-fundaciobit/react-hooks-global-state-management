@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 // import "../../src/styles/ContactContainer.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+
 const Contact = (props) => {
-  const [visible, setVisible] = useState(false);
+  const [fullData, setFullData] = useState(false);
 
   const setBackgroundColor = (sector) => {
     if (sector === "Tecnología") {
@@ -15,24 +18,49 @@ const Contact = (props) => {
     return null;
   };
 
-  console.log(visible);
   let mySector = props.sector;
   return (
     <li style={setBackgroundColor(mySector)}>
-      {/* <li style={{ backgroundColor: "ligthblue" }}> */}
-      <p
-        className="contact-header"
-        onClick={() => setVisible(!visible)}
-      >{`${props.name} ${props.phone}`}</p>
-      {visible ? (
-        <div>
-          <p>{`NOMBRE: ${props.name} ${props.surnames}`}</p>
-          <p>{`TELÉFONO: ${props.phone}`}</p>
-          <p>{`EMAIL: ${props.email}`}</p>
-          <p>{`EMPRESA: ${props.company}`}</p>
-          <p>{`Sector: ${props.sector}`}</p>
+      <div
+        className="row"
+        onMouseEnter={() => setFullData(!fullData)}
+        onMouseLeave={() => setFullData(!fullData)}
+      >
+        <div className="contact-column-left">
+          <div className="avatar-container">
+            {" "}
+            <img
+              className="avatar"
+              src={`https://avatars.dicebear.com/api/bottts/${props.surnames.slice(
+                2,
+                -2
+              )} ${props.sector}.svg `}
+              alt={`${props.name} ${props.surnames}`}
+              width="50"
+              height="50"
+            ></img>
+          </div>{" "}
         </div>
-      ) : null}
+        <div className="contact-column-right">
+          {fullData ? (
+            <div>
+              <p>
+                {`NOMBRE: ${props.name} ${props.surnames}`}
+                <FontAwesomeIcon style={{ float: "right" }} icon={faTrash} />
+              </p>
+              <p>{`TELÉFONO: ${props.phone}`}</p>
+              <p>{`EMAIL: ${props.email}`}</p>
+              <p>{`EMPRESA: ${props.company}`}</p>
+              <p>{`Sector: ${props.sector}`}</p>
+            </div>
+          ) : (
+            <div>
+              <p className="contact-header">{`${props.name}`}</p>
+              <p className="contact-header">{`${props.phone}`}</p>
+            </div>
+          )}
+        </div>
+      </div>
     </li>
   );
 };
