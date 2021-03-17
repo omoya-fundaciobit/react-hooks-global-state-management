@@ -2,6 +2,9 @@
   "name": "miscontactos",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.19.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
