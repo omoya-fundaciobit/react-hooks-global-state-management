@@ -6,9 +6,17 @@ if (port == null || port === "") {
   port = 8000;
 }
 var cors = require("cors");
+const path = require("path");
 
 router.use(cors()); // Allow CORS
 router.use(bodyParser.json()); // to support JSON-encoded bodies
+
+// Serving React apps
+router.use(express.static(path.join(__dirname, "build")));
+
+// router.get("/home", (req, res) => {
+//   res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
 
 const contacts = [
   {
@@ -31,7 +39,7 @@ const contacts = [
   },
 ];
 
-router.get("/", (req, res) => {
+router.get("/contacts", (req, res) => {
   res.json({ results: contacts });
 });
 

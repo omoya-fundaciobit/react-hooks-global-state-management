@@ -15,7 +15,7 @@ const ContactsList = ({ props }) => {
   // Retrieve the posts array and exclusion terms. Executes only on mounting.
   useEffect(() => {
     axios
-      .get("http://localhost:4000/")
+      .get("http://localhost:8000/contacts")
       .then((result) => {
         let contacts = result.data.results;
         dispatch({ type: "SET_CONTACTS", contacts });
