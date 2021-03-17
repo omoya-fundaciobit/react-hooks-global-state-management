@@ -1,7 +1,10 @@
 const express = require("express");
 var bodyParser = require("body-parser");
 const router = express();
-const port = 4000;
+let port = process.env.PORT;
+if (port == null || port === "") {
+  port = 8000;
+}
 var cors = require("cors");
 
 router.use(cors()); // Allow CORS
