@@ -46,7 +46,7 @@ const contacts = [
   },
 ];
 
-router.get("/contacts", (req, res) => {
+router.get("/api/contacts", (req, res) => {
   res.json({ results: contacts });
 });
 
