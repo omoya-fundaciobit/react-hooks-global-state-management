@@ -190,10 +190,10 @@ const ContactForm = ({ submit }) => {
                 {" "}
                 {/* Botón para realizar el Submit del formulario */}
                 <button type="submit" disabled={isSubmitting}>
-                  Enviar
+                  Añadir
                 </button>
                 {/* Botón para resetear los campos del formulario */}
-                <button onClick={resetForm}>Reiniciar</button>
+                <button onClick={resetForm}>Resetear</button>
               </div>
             </form>
           );
