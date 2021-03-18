@@ -193,7 +193,7 @@ const ContactForm = ({ submit }) => {
                   Añadir
                 </button>
                 {/* Botón para resetear los campos del formulario */}
-                <button onClick={resetForm}>Resetear</button>
+                <button onClick={resetForm}>Reiniciar</button>
               </div>
             </form>
           );
