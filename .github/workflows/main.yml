@@ -1,3 +1,5 @@
+# Further info at:
+# https://github.com/marketplace/actions/deploy-to-heroku#:~:text=In%20your%20Repo%2C%20go%20to,automatically%20deployed%20to%20Heroku%20henceforth.
 name: Deploy
 
 on:
@@ -13,5 +15,5 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "YOUR APP's NAME" #Must be unique in Heroku
-          heroku_email: "YOUR EMAIL"
+          heroku_app_name: "stormy-cove-94737" #Must be unique in Heroku
+          heroku_email: "omoya@fundaciobit.org"
