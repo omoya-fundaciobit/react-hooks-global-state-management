@@ -13,6 +13,13 @@ router.use(bodyParser.json()); // to support JSON-encoded bodies
 
 // Serving React apps
 router.use(express.static(path.join(__dirname, "build")));
+// required to serve SPA on heroku production without routing problems; it will skip only 'api' calls
+// Further info at: https://stackoverflow.com/questions/62231197/my-crud-app-works-locally-but-not-on-heroku
+if (process.env.NODE_ENV === "production") {
+  router.get(/^((?!(api)).)*$/, (req, res) => {
+    res.sendFile(path.join(__dirname, "/build", "index.html"));
+  });
+}
 
 // router.get("/home", (req, res) => {
 //   res.sendFile(path.join(__dirname, "build", "index.html"));
