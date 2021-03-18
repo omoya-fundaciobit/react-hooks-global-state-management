@@ -1,11 +1,11 @@
 # Further info at:
 # https://github.com/marketplace/actions/deploy-to-heroku#:~:text=In%20your%20Repo%2C%20go%20to,automatically%20deployed%20to%20Heroku%20henceforth.
-name: Deploy
+name: Deploy Heroku
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
